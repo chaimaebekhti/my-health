@@ -10,6 +10,9 @@
        <img src="th (1).jpg">
    </div>
 
+<div class="col m-4">
+   <?php if(!$SessionManager->isSignout()): ?>
+ <p class="text"> Please enter your email! </p>   
 
 <div class="col m-4"> 
 <div class="card">	
@@ -22,7 +25,12 @@
   <label for="exampleFormControlTextarea1" class="form-label">confirmation number</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 <button type="button" class="btn btn-danger" href="index.php?page=confirmation" style="background-color: #d63384; margin-top: 20px;">confirmation</button>
-</form>  
+</form>
+<?php else: ?>
+  Confirmation completed successfully.
+  <br>
+  <a href="action.php?page=login" class= "btn btn-primary"style="margin-top: 25px;">login</a>
+<?php endif ; ?>  
 
 </div>
 </div>
