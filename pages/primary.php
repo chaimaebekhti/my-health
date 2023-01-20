@@ -21,7 +21,7 @@
 <div class="mb-3" style="margin: 25px;">
   <label for="exampleFormControlTextarea1" class="form-label">confirmation number</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-<button type="button" class="btn btn-danger" href="inbox.php?page=confirmation" style="background-color: #d63384; margin-top: 20px;">confirmation</button>
+<button type="button" class="btn btn-danger" href="index.php?page=confirmation" style="background-color: #d63384; margin-top: 20px;">confirmation</button>
 </form>  
 
 </div>
