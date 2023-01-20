@@ -11,8 +11,10 @@
    </div>
 
 <div class="col m-4">
-   <?php if(!$SessionManager->isSignout()): ?>
+
+   <?php if(!$SessionManager->isLogin()): ?>
  <p class="text"> Please enter your email! </p>   
+
 
 <div class="col m-4"> 
 <div class="card">	
@@ -24,8 +26,9 @@
 <div class="mb-3" style="margin: 25px;">
   <label for="exampleFormControlTextarea1" class="form-label">confirmation number</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-<button type="button" class="btn btn-danger" href="index.php?page=confirmation" style="background-color: #d63384; margin-top: 20px;">confirmation</button>
+<button type="submit" class="btn btn-danger" href="index.php?page=confirmation" style="background-color: #d63384; margin-top: 20px;">confirmation</button>
 </form>
+</div>
 <?php else: ?>
   Confirmation completed successfully.
   <br>
@@ -37,12 +40,8 @@
 
 </div>
 
-
 </div>
 </div>
-
-
-
 
 
 

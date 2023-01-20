@@ -1,8 +1,16 @@
 <?php
 
 session_start();
+include "classes/User.php";
+include "classes/UserManager.php";
+include "classes/SessionManager.php";
+include "db.php";
 
-$pages=[ "primary" , "confirmation" ]; 
+$userManager = new UserManager($db);
+$SessionManager = new SessionManager();
+
+
+$pages=[ "primary" , "confirmation" , "login" ]; 
 
 $page="";
 if (isset($_GET["page"])) {

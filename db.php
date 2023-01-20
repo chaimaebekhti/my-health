@@ -3,4 +3,8 @@
 $host = "localhost" ;
 $username = "root" ;
 $password = "" ;
-$database = "chaimae" ;
+$database = "my-health" ;
+
+$db = new mysqli($host , $username , $password  , $database) ;
+
+?>
