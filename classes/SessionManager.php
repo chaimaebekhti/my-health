@@ -1,10 +1,10 @@
 <?php 
 class SessionManager{
-				private $ad = "id";
+	
 				private $em = "Email";
 
 				public function isLogin(){
-					if(isset($_SESSION[$this->ad])) {
+					if(isset($_SESSION[$this->id])) {
 						return true;
 
 					}else{
@@ -12,25 +12,21 @@ class SessionManager{
 					}
 				}
 
-				public function setLogin($ad){
-			      $_SESSION[$this->ad]= $ad;
+				public function setLogin($id){
+			      $_SESSION[$this->id]= $id;
 				}
 
-				public function Login(){
-					unset($_SESSION[$this->ad]);
+				public function login(){
+					unset($_SESSION[$this->id]);
 				}
 
            
-		
+
 			 public function getNm(){
 			    return $this->em = "Email";
 			 }
 
 			}
-
-
-
-
 
 
 

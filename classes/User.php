@@ -3,8 +3,8 @@ class User{
 
 public  $id; 
 private $Email;
-private $Name;
-private $Born;
+private $Confirmation;
+
 
     
 	
@@ -25,24 +25,13 @@ private $Born;
         $this->Email = $Email;
     }
 
-    public function getName(){
-      return $this->Name;
+    public function getConfirmation(){
+      return $this->Confirmation;
    }
 
-    public function setName($Name){
-        $this->Name = $Name;
+    public function setConfirmation($Confirmation){
+        $this->Confirmation = $Confirmation;
     }
-
-   public function getBorn(){
-      return $this->Born;
-   }
-
-    public function setBorn($Born){
-        $this->Born = $Born;
-    }
-
-    
-   
 
 
  } 
