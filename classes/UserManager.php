@@ -14,14 +14,12 @@ public function __construct($db) {
     	$users = [];
     	while($user = $result->fetch_assoc()) {
 
-    	    $userJdid = new User();
-    	    $userJdid->setId($user["id"]);
-    	    $userJdid->setEmail($user["Email"]);
-    	    $userJdid->setConfirmation($user["Confirmation"]);
+    	    $userNew = new User();
+    	    $userNew->setId($user["id"]);
+    	    $userNew->setEmail($user["Email"]);
+    	    $userNew->setConfirmation($user["confirmation"]);
     	    
-    	    
-
-$users[] = $userNew;
+            $users[] = $userNew;
 
     	}
 
@@ -62,10 +60,10 @@ $users[] = $userNew;
 
      public function createUser($Email , $Confirmation) {
        $Email = $this->db->real_escape_string($Email);
-       $Name = $this->db->real_escape_string($Confirmation);
+       $confirmation = $this->db->real_escape_string($Confirmation);
       
     	
-       $result=$this->db->query("INSERT INTO users(Email,Name,Born) VALUES ('$Email','$Confirmation')");
+       $result=$this->db->query("INSERT INTO users(Email,confirmation) VALUES ('$Email','$Confirmation')");
 
        	if ($result) {
        		return true;
@@ -77,7 +75,7 @@ $users[] = $userNew;
 
      
       public function updateUserConfirmation($id , $newConfirmation){
-        $newName = $this->db->real_escape_string($newConfirmation);
+        $newconfirmation = $this->db->real_escape_string($newConfirmation);
         $id = (int) $id;
 
         $result = $this->db->query("UPDATE users SET Confirmation = '$newConfirmation' WHERE id = $id'");

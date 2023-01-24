@@ -1,23 +1,37 @@
 <?php 
 
  
-if(empty($_POST["Email"])|| empty($_POST["confirmation"])){
-   echo "Please enter your Email";
- }else{
+//var_dump($_POST) ;
 
-       $Email = $_POST["Email"];
-       $confirmation = $_POST["confirmation"];
-       $user = $userManager->getUserByEmailAndConfirmation($Email , $Confirmation);
+if(isset($_POST['Email'])&& isset($_POST['confirmation'])){
+       
+       $Email = $_POST['Email'];
+       $confirmation = $_POST['confirmation'];
+
+       if(strlen($Email) < 5){
+         die("Error: Your E-mail is incorrect.");
+        }
+
+        if(strlen($confirmation) < 4){
+         die("Error: Enter a Password that is at least 4 characters.");
+        }
+       
+
+       $user = $userManager->createUser($Email, $confirmation);
        if(!$user){
-         echo "Please enter your Email";
+         echo "Error: operachtion fail.";
          exit;
        }
-       
-       $_SESSION['id'] = $user->getId();
-       header("Location:http://localhost/my-health/indox?page=primary");
+
+      
+        header("Location: http://localhost/my-health/index.php?page=login");
+     
+    }   
 
 
-}
+
+
+
 
 
 
@@ -25,3 +39,5 @@ if(empty($_POST["Email"])|| empty($_POST["confirmation"])){
 
 
  ?>
+
+

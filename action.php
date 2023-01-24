@@ -9,7 +9,7 @@ include "classes/SessionManager.php";
 $userManager = new UserManager($db);
 $SessionManager = new SessionManager();
 
-$pages=["primary","confirmation", "login" ];
+$pages=["primary","confirmation", "login" , "myHealth"];
 
 $page="";
 if (isset($_GET["page"])) {

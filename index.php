@@ -10,7 +10,7 @@ $userManager = new UserManager($db);
 $SessionManager = new SessionManager();
 
 
-$pages=[ "primary" , "confirmation" , "login" ]; 
+$pages=[ "primary" , "confirmation" , "login" , "myHealth" ,"disease", "liver" , "intestine"]; 
 
 $page="";
 if (isset($_GET["page"])) {
